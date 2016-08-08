@@ -19,9 +19,6 @@ else
     exit 1
 fi
 
-# Abort on error
-set -e
-
 startDir=$PWD
 
 # Run directory
