@@ -28,28 +28,36 @@ svcMgr += AlgResourcePool( OutputLevel = INFO );
 ######################################################################################
 #
 ## AthenaCommon flags
+
+# I'm using similar paths on different machines, so I can just change a base path
+# in order to switch.
+import os.path.join as path_join
+inputBaseDir = '/afs/cern.ch/work/s/sfarrell/evnt' # AFS
+
 from AthenaCommon.AthenaCommonFlags import athenaCommonFlags
 athenaCommonFlags.PoolEvgenInput = [
     #'/afs/cern.ch/user/z/zmarshal/public/ForSteve/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000001.pool.root.1',
 
+    path_join(inputBaseDir, 'mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000063.pool.root.1'),
+
     # 5 single-mu files
-    '/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000063.pool.root.1',
-    '/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000100.pool.root.1',
-    '/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000111.pool.root.1',
-    '/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000129.pool.root.1',
-    '/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000134.pool.root.1',
-    '/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000137.pool.root.1',
-    '/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000183.pool.root.1',
+    path_join(inputBaseDir, 'mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000063.pool.root.1'),
+    path_join(inputBaseDir, 'mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000100.pool.root.1'),
+    path_join(inputBaseDir, 'mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000111.pool.root.1'),
+    path_join(inputBaseDir, 'mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000129.pool.root.1'),
+    path_join(inputBaseDir, 'mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000134.pool.root.1'),
+    path_join(inputBaseDir, 'mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000137.pool.root.1'),
+    path_join(inputBaseDir, 'mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000183.pool.root.1'),
 
     # Z-tautau + NP2 file
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.361722.AlpgenPythiaEvtGen_P2012_ZtautauNp2.evgen.EVNT.e4721/EVNT.07352247._001123.pool.root.1',
+    #path_join(inputBaseDir, 'mc15_13TeV.361722.AlpgenPythiaEvtGen_P2012_ZtautauNp2.evgen.EVNT.e4721/EVNT.07352247._001123.pool.root.1'),
 
     # Z-mumu files
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.361710.AlpgenPythiaEvtGen_P2012_ZmumuNp0.evgen.EVNT.e4721/EVNT.07352213._000733.pool.root.1',
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.361711.AlpgenPythiaEvtGen_P2012_ZmumuNp1.evgen.EVNT.e4721/EVNT.07352218._000490.pool.root.1',
+    #path_join(inputBaseDir, 'mc15_13TeV.361710.AlpgenPythiaEvtGen_P2012_ZmumuNp0.evgen.EVNT.e4721/EVNT.07352213._000733.pool.root.1'),
+    #path_join(inputBaseDir, 'mc15_13TeV.361711.AlpgenPythiaEvtGen_P2012_ZmumuNp1.evgen.EVNT.e4721/EVNT.07352218._000490.pool.root.1'),
 
     # Standard ttbar sample for testing
-    #'/afs/cern.ch/atlas/offline/ProdData/16.6.X/16.6.7.Y/ttbar_muplusjets-pythia6-7000.evgen.pool.root',
+    #path_join(inputBaseDir, 'a/16.6.X/16.6.7.Y/ttbar_muplusjets-pythia6-7000.evgen.pool.root'),
 ]
 
 # Dirty way to set number of events via command line
