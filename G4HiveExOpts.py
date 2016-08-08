@@ -57,7 +57,7 @@ athenaCommonFlags.PoolEvgenInput = [
     #path_join(inputBaseDir, 'mc15_13TeV.361711.AlpgenPythiaEvtGen_P2012_ZmumuNp1.evgen.EVNT.e4721/EVNT.07352218._000490.pool.root.1'),
 
     # Standard ttbar sample for testing
-    #path_join(inputBaseDir, 'a/16.6.X/16.6.7.Y/ttbar_muplusjets-pythia6-7000.evgen.pool.root'),
+    #'/afs/cern.ch/atlas/offline/ProdData/16.6.X/16.6.7.Y/ttbar_muplusjets-pythia6-7000.evgen.pool.root',
 ]
 
 # Dirty way to set number of events via command line
