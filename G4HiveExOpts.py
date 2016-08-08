@@ -32,7 +32,8 @@ svcMgr += AlgResourcePool( OutputLevel = INFO );
 # I'm using similar paths on different machines, so I can just change a base path
 # in order to switch.
 from os.path import join as path_join
-inputBaseDir = '/afs/cern.ch/work/s/sfarrell/evnt' # AFS
+#inputBaseDir = '/afs/cern.ch/work/s/sfarrell/evnt' # AFS
+inputBaseDir = '/project/projectdirs/atlas/sfarrell/evnt' # NERSC
 
 from AthenaCommon.AthenaCommonFlags import athenaCommonFlags
 athenaCommonFlags.PoolEvgenInput = [
