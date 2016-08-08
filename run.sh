@@ -31,6 +31,7 @@ logFile="log.$configStr.log"
 memFile="mem.$configStr.csv"
 timeFile="timeline.$configStr.log"
 
+date
 echo "Launching $nThread threads, $nProc procs, $nEvent events"
 echo "Started from directory $startDir"
 echo "Running in directory $runDir"
