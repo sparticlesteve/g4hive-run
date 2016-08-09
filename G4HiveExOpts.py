@@ -31,7 +31,7 @@ svcMgr += AlgResourcePool( OutputLevel = INFO );
 
 # I'm using similar paths on different machines, so I can just change a base path
 # in order to switch.
-import os.path.join as path_join
+from os.path import join as path_join
 inputBaseDir = '/afs/cern.ch/work/s/sfarrell/evnt' # AFS
 
 from AthenaCommon.AthenaCommonFlags import athenaCommonFlags
