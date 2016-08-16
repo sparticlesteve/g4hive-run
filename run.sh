@@ -23,7 +23,7 @@ startDir=$PWD
 
 # Run directory
 runDir=/tmp/$USER/results_`date +"%s%N"`
-mkdir $runDir && cd $runDir
+mkdir -p $runDir && cd $runDir
 
 # Output log files
 configStr="${nThread}_${nProc}_${nEvent}"
