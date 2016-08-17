@@ -182,7 +182,7 @@ algCardinality = jp.ConcurrencyFlags.NumThreads()
 if (algCardinality != 1):
     for alg in topSeq:
         name = alg.name()
-        if name in ["StreamHITS"]:
+        if name in ['StreamHITS', 'VTune_CCAPI']:
             print 'Disabling cloning/cardinality for', name
             # Don't clone these algs
             alg.Cardinality = 1
