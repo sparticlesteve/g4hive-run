@@ -41,7 +41,7 @@ athenaCommonFlags.PoolEvgenInput = [
     '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000183.pool.root.1',
 
     # 2k TTBar events
-    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.410000.PowhegPythiaEvtGen_P2012_ttbar_hdamp172p5_nonallhad.evgen.EVNT.e3698/EVNT.05192704._005477.pool.root.1'.
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.410000.PowhegPythiaEvtGen_P2012_ttbar_hdamp172p5_nonallhad.evgen.EVNT.e3698/EVNT.05192704._005477.pool.root.1',
     #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.410000.PowhegPythiaEvtGen_P2012_ttbar_hdamp172p5_nonallhad.evgen.EVNT.e3698/EVNT.05192704._018877.pool.root.1',
 
     # 1 TTBar file
