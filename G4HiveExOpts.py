@@ -32,13 +32,13 @@ svcMgr += AlgResourcePool( OutputLevel = INFO );
 from AthenaCommon.AthenaCommonFlags import athenaCommonFlags
 athenaCommonFlags.PoolEvgenInput = [
     # 5 single-mu files
-    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000063.pool.root.1',
-    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000100.pool.root.1',
-    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000111.pool.root.1',
-    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000129.pool.root.1',
-    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000134.pool.root.1',
-    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000137.pool.root.1',
-    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000183.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000063.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000100.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000111.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000129.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000134.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000137.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000183.pool.root.1',
 
     # 2k TTBar events
     #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.410000.PowhegPythiaEvtGen_P2012_ttbar_hdamp172p5_nonallhad.evgen.EVNT.e3698/EVNT.05192704._005477.pool.root.1',
@@ -47,6 +47,10 @@ athenaCommonFlags.PoolEvgenInput = [
     # 1 TTBar file
     #'/project/projectdirs/atlas/sfarrell/evnt/ttbar_muplusjets/ttbar_muplusjets-pythia6-7000.evgen.pool.root',
 
+    # 5k Zmumu events
+    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.361710.AlpgenPythiaEvtGen_P2012_ZmumuNp0.evgen.EVNT.e4721/EVNT.07352213._002022.pool.root.1',
+
+    #'/afs/cern.ch/atlas/offline/ProdData/16.6.X/16.6.7.Y/ttbar_muplusjets-pythia6-7000.evgen.pool.root',
 ]
 
 # Dirty way to set number of events via command line
@@ -91,27 +95,22 @@ DetFlags.Truth_setOn()
 
 ## Global conditions tag
 from AthenaCommon.GlobalFlags import jobproperties
-jobproperties.Global.ConditionsTag = "OFLCOND-MC12-SIM-00"
+#jobproperties.Global.ConditionsTag = "OFLCOND-MC12-SIM-00"
+jobproperties.Global.ConditionsTag = "OFLCOND-RUN12-SDR-21"
 
 ## Simulation flags
 from G4AtlasApps.SimFlags import simFlags
-from G4AtlasApps import callbacks
 simFlags.load_atlas_flags()
-#simFlags.RandomSvc = 'AtDSFMTGenSvc'
-
-## Layout tags: see simFlags.SimLayout for allowed values
 ## Use the default layout:
 simFlags.SimLayout.set_On()
-
 ## Set the EtaPhi, VertexSpread and VertexRange checks on
 simFlags.EventFilter.set_Off()
-
 ## Set the LAr parameterization
-#simFlags.LArParameterization = 2
-
-## No magnetic field
+simFlags.LArParameterization = 0
+## Calorimeter calibration run settings
+simFlags.CalibrationRun.set_Off()
+## Magnetic field
 simFlags.MagneticField.set_On()
-
 # Activate new user actions for multithreading
 simFlags.UseV2UserActions = True
 
