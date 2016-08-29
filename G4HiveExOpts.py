@@ -89,7 +89,8 @@ DetFlags.Truth_setOn()
 
 ## Global conditions tag
 from AthenaCommon.GlobalFlags import jobproperties
-jobproperties.Global.ConditionsTag = "OFLCOND-MC12-SIM-00"
+#jobproperties.Global.ConditionsTag = "OFLCOND-MC12-SIM-00"
+jobproperties.Global.ConditionsTag = "OFLCOND-RUN12-SDR-21"
 
 ## Simulation flags
 from G4AtlasApps.SimFlags import simFlags
