@@ -48,7 +48,10 @@ athenaCommonFlags.PoolEvgenInput = [
     #'/project/projectdirs/atlas/sfarrell/evnt/ttbar_muplusjets/ttbar_muplusjets-pythia6-7000.evgen.pool.root',
 
     # 5k Zmumu events
-    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.361710.AlpgenPythiaEvtGen_P2012_ZmumuNp0.evgen.EVNT.e4721/EVNT.07352213._002022.pool.root.1',
+    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.361710.AlpgenPythiaEvtGen_P2012_ZmumuNp0.evgen.EVNT.e4721/EVNT.07352213._000733.pool.root.1',
+
+    # 5k Ztautau events
+    '/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.361722.AlpgenPythiaEvtGen_P2012_ZtautauNp2.evgen.EVNT.e4721/EVNT.07352247._001123.pool.root.1',
 
     #'/afs/cern.ch/atlas/offline/ProdData/16.6.X/16.6.7.Y/ttbar_muplusjets-pythia6-7000.evgen.pool.root',
 ]
