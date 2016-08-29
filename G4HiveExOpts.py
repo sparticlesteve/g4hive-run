@@ -94,23 +94,17 @@ jobproperties.Global.ConditionsTag = "OFLCOND-RUN12-SDR-21"
 
 ## Simulation flags
 from G4AtlasApps.SimFlags import simFlags
-from G4AtlasApps import callbacks
 simFlags.load_atlas_flags()
-#simFlags.RandomSvc = 'AtDSFMTGenSvc'
-
-## Layout tags: see simFlags.SimLayout for allowed values
 ## Use the default layout:
 simFlags.SimLayout.set_On()
-
 ## Set the EtaPhi, VertexSpread and VertexRange checks on
 simFlags.EventFilter.set_Off()
-
 ## Set the LAr parameterization
-#simFlags.LArParameterization = 2
-
-## No magnetic field
+simFlags.LArParameterization = 0
+## Calorimeter calibration run settings
+simFlags.CalibrationRun.set_Off()
+## Magnetic field
 simFlags.MagneticField.set_On()
-
 # Activate new user actions for multithreading
 simFlags.UseV2UserActions = True
 
