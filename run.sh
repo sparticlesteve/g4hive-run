@@ -51,7 +51,14 @@ grep "leaving with code" $logFile
 
 # Finalize timeline
 echo $startTime > $timeFile
-cat timeline.csv >> $timeFile
+if [ $nProc -eq 0 ]; then
+    cat timeline.csv >> $timeFile
+else
+    # For MP, we concatenate the timelines from each worker
+    for workerTimeFile in athenaMP_workers/worker_*/timeline.csv; do
+        cat $workerTimeFile >> $timeFile
+    done
+fi
 echo $endTime >> $timeFile
 
 # Move outputs to results dir
@@ -61,4 +68,6 @@ mkdir -p $resultsDir
 mv $logFile $resultsDir/
 mv $memFile $resultsDir/
 mv $timeFile $resultsDir/
-rm -rf $runDir
+
+# Disabling for MP tests
+#rm -rf $runDir
