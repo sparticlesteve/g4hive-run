@@ -68,6 +68,3 @@ mkdir -p $resultsDir
 mv $logFile $resultsDir/
 mv $memFile $resultsDir/
 mv $timeFile $resultsDir/
-
-# Disabling for MP tests
-#rm -rf $runDir
