@@ -174,7 +174,5 @@ if (algCardinality != 1):
             print 'Disabling cloning/cardinality for', name
             # Don't clone these algs
             alg.Cardinality = 1
-            alg.IsClonable = False
         else:
             alg.Cardinality = algCardinality
-            alg.IsClonable = True
