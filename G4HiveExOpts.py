@@ -153,11 +153,6 @@ topSeq.G4AtlasAlg.ExtraInputs =  [('McEventCollection','BeamTruthEvent')]
 topSeq.G4AtlasAlg.ExtraOutputs = [('SiHitCollection','SCT_Hits')]
 topSeq.StreamHITS.ExtraInputs += topSeq.G4AtlasAlg.ExtraOutputs
 
-# Disable all of the LAr SDs because they are not yet thread-safe
-sdMaster = ToolSvc.SensitiveDetectorMasterTool
-larSDs = [sd for sd in sdMaster.SensitiveDetectors if sd.name().startswith('LAr')]
-for sd in larSDs: sdMaster.SensitiveDetectors.remove(sd)
-
 # Increase verbosity of the output stream
 #topSeq.StreamHITS.OutputLevel = DEBUG
 
