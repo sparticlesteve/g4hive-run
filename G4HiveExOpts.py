@@ -111,8 +111,6 @@ simFlags.LArParameterization = 0
 simFlags.CalibrationRun.set_Off()
 ## Magnetic field
 simFlags.MagneticField.set_On()
-# Activate new user actions for multithreading
-simFlags.UseV2UserActions = True
 
 # G4InitTool handles worker thread G4 infrastructure setup
 svcMgr.ThreadPoolSvc.ThreadInitTools = ["G4InitTool"]
