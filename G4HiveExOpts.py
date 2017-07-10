@@ -114,8 +114,6 @@ simFlags.LArParameterization = 0
 simFlags.CalibrationRun.set_Off()
 ## Magnetic field
 simFlags.MagneticField.set_On()
-# Activate new user actions for multithreading
-simFlags.UseV2UserActions = True
 
 # G4InitTool handles worker thread G4 infrastructure setup
 svcMgr.ThreadPoolSvc.ThreadInitTools = ["G4InitTool"]
@@ -158,11 +156,6 @@ topSeq.G4AtlasAlg.ExtraInputs =  [('McEventCollection','BeamTruthEvent')]
 topSeq.G4AtlasAlg.ExtraOutputs = [('SiHitCollection','SCT_Hits')]
 topSeq.StreamHITS.ExtraInputs += topSeq.G4AtlasAlg.ExtraOutputs
 
-# Disable all of the LAr SDs because they are not yet thread-safe
-sdMaster = ToolSvc.SensitiveDetectorMasterTool
-larSDs = [sd for sd in sdMaster.SensitiveDetectors if sd.name().startswith('LAr')]
-for sd in larSDs: sdMaster.SensitiveDetectors.remove(sd)
-
 # Increase verbosity of the output stream
 #topSeq.StreamHITS.OutputLevel = DEBUG
 
@@ -179,7 +172,5 @@ if (algCardinality != 1):
             print 'Disabling cloning/cardinality for', name
             # Don't clone these algs
             alg.Cardinality = 1
-            alg.IsClonable = False
         else:
             alg.Cardinality = algCardinality
-            alg.IsClonable = True
