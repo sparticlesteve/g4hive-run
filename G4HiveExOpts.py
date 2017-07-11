@@ -121,10 +121,10 @@ topSeq = AlgSequence()
 
 # VTune instrumentation algorithm
 if 'vtune' in dir() and vtune:
+    from AthenaCommon.AppMgr import theApp
     from IntelProfiling.IntelProfilingConf import VTuneProfilerSvc
-    svcMgr += VTuneProfilerSvc()
-    #from VTune_CCAPI.VTune_CCAPIConf import CCAPI_Alg
-    #topSeq += CCAPI_Alg("VTune_CCAPI", OutputLevel=DEBUG, resumeAtBeginRun=True)
+    svcMgr += VTuneProfilerSvc('VTuneProfilerSvc')
+    theApp.CreateSvc += [ 'VTuneProfilerSvc' ]
 
 # Currently, Hive requires an algorithm to load the initial data into the
 # whiteboard and kickstart the data dependency chain. This alg must be at the
