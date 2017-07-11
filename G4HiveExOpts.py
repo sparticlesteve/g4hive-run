@@ -29,23 +29,26 @@ svcMgr += ThreadPoolSvc("ThreadPoolSvc")
 from AthenaCommon.AthenaCommonFlags import athenaCommonFlags
 athenaCommonFlags.PoolEvgenInput = [
     # 5 single-mu files
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000063.pool.root.1',
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000100.pool.root.1',
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000111.pool.root.1',
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000129.pool.root.1',
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000134.pool.root.1',
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000137.pool.root.1',
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000183.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000063.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000100.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000111.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000129.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000134.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000137.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000183.pool.root.1',
 
     # 2k TTBar events
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.410000.PowhegPythiaEvtGen_P2012_ttbar_hdamp172p5_nonallhad.evgen.EVNT.e3698/EVNT.05192704._005477.pool.root.1',
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.410000.PowhegPythiaEvtGen_P2012_ttbar_hdamp172p5_nonallhad.evgen.EVNT.e3698/EVNT.05192704._018877.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.410000.PowhegPythiaEvtGen_P2012_ttbar_hdamp172p5_nonallhad.evgen.EVNT.e3698/EVNT.05192704._005477.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.410000.PowhegPythiaEvtGen_P2012_ttbar_hdamp172p5_nonallhad.evgen.EVNT.e3698/EVNT.05192704._018877.pool.root.1',
+
+    # 1 TTBar file
+    #'/project/projectdirs/atlas/sfarrell/evnt/ttbar_muplusjets/ttbar_muplusjets-pythia6-7000.evgen.pool.root',
 
     # 5k Zmumu events
-    #'/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.361710.AlpgenPythiaEvtGen_P2012_ZmumuNp0.evgen.EVNT.e4721/EVNT.07352213._000733.pool.root.1',
+    #'/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.361710.AlpgenPythiaEvtGen_P2012_ZmumuNp0.evgen.EVNT.e4721/EVNT.07352213._002022.pool.root.1',
 
     # 5k Ztautau events
-    '/afs/cern.ch/work/s/sfarrell/evnt/mc15_13TeV.361722.AlpgenPythiaEvtGen_P2012_ZtautauNp2.evgen.EVNT.e4721/EVNT.07352247._001123.pool.root.1',
+    '/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.361722.AlpgenPythiaEvtGen_P2012_ZtautauNp2.evgen.EVNT.e4721/EVNT.07352247._000206.pool.root.1',
 
     #'/afs/cern.ch/atlas/offline/ProdData/16.6.X/16.6.7.Y/ttbar_muplusjets-pythia6-7000.evgen.pool.root',
 ]
