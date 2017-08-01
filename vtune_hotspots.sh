@@ -9,4 +9,5 @@ fi
 results=$1
 rows=50
 
-amplxe-cl -report hotspots -r $results -limit=$rows -column="Clockticks,Retired,CPI,Front-End Bound:Self,Bad Speculation:Self,Back-End Bound:Self"
+amplxe-cl -report hotspots -r $results -limit=$rows
+#amplxe-cl -report hotspots -r $results -limit=$rows -column="Clockticks,Retired,CPI,Front-End Bound:Self,Bad Speculation:Self,Back-End Bound:Self"
