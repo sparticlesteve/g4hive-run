@@ -38,7 +38,7 @@ echo "Running in directory $runDir"
 echo "log to $logFile"
 
 # Command line options
-jobOpts=$startDir/G4HiveExOpts.py
+jobOpts=$startDir/jobOptions.G4AtlasMT.py
 commands="evtMax=$nEvent"
 profOpts="--profilerMode eventLoop --profilerInitEvent 2 --profilerOutput $profFile"
 concurrencyOpts="--threads=$nThread --nproc=$nProc"
