@@ -1,23 +1,38 @@
 #!/bin/bash
 
-# This script is my attempt to update and translate Charles's run_batch_smap
-# c-shell script to bash
+#
+# This script will run G4AtlasMT with a specified number of threads and events
+# on a specified input file.
+#
+# This script is in development with more command line option features.
+#
 
-nProc=0
+# Default config
 nEvent=500
-if [ $# -eq 3 ]; then
-    nEvent=$3
-    nProc=$2
-    nThread=$1
-elif [ $# -eq 2 ]; then
-    nProc=$2
-    nThread=$1
-elif [ $# -eq 1 ]; then
-    nThread=$1
-else
-    echo "usage: $0 nThreads [nProcs] [nEvent]"
-    exit 1
-fi
+nThread=1
+inputFile=/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000063.pool.root.1
+
+# Parse command line options
+while getopts ":hn:t:i:" opt; do
+    case $opt in
+        h)
+            echo "Usage: $0 -t nThreads -n nEvents -i inputFile"
+            exit 0
+            ;;
+        n)
+            nEvent=$OPTARG
+            ;;
+        t)
+            nThread=$OPTARG
+            ;;
+        i)
+            inputFile=$OPTARG
+            ;;
+        \?)
+            echo "Invalid option: $OPTARG" 1>&2
+            exit 1
+    esac
+done
 
 startDir=$PWD
 
@@ -26,10 +41,11 @@ runDir=/tmp/$USER/results_`date +"%s%N"`
 mkdir -p $runDir && cd $runDir
 
 date
-echo "Launching $nThread threads, $nProc procs, $nEvent events"
+echo "Launching $nThread threads, $nEvent events"
+echo "Input file: $inputFile"
 echo "Started from directory $startDir"
 echo "Running in directory $runDir"
 
 # Launch athena
-jobOpts=$startDir/G4HiveExOpts.py
-athena.py --threads=$nThread --nproc=$nProc -c "evtMax=$nEvent" $jobOpts
+jobOpts=$startDir/jobOptions.G4AtlasMT.py
+athena.py --threads=$nThread --evtMax $nEvent --filesInput=$inputFile $jobOpts

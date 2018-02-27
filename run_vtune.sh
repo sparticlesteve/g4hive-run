@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Results directory
-resDir=$SCRATCH/g4hive/vtune/r001ge
+resDir=$SCRATCH/athsim/vtune/r001ge
 
 # Advanced hotspots configuration
 #vtuneOpts="-collect advanced-hotspots -start-paused"
@@ -13,8 +13,10 @@ vtuneOpts="-collect general-exploration -r $resDir -start-paused -mrte-mode=nati
 #vtuneOpts="-collect hpc-performance -knob collect-memory-bandwidth=true -start-paused -mrte-mode=native -target-duration-type=medium -data-limit=0"
 
 # Athena configuration; change as needed.
-athenaOpts="--threads=32 --stdcmalloc -c \"evtMax=160;vtune=True\" ./G4HiveExOpts.py"
-#athenaOpts="--threads=1 --stdcmalloc -c \"evtMax=5;vtune=True\" ./G4HiveExOpts.py"
+nThread=1
+nEvent=1
+inputFile=/project/projectdirs/atlas/sfarrell/evnt/mc15_13TeV.424000.ParticleGun_single_mu_Pt100.evgen.EVNT.e3580/EVNT.04922446._000063.pool.root.1
+athenaOpts="--threads=$nThread --evtmax=$nEvent --filesInput=$inputFile --stdcmalloc ./jobOptions.G4AtlasMT.py ./vtune.fragment.py"
 
 # Run it
 athena=`which athena.py`
